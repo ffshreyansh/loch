@@ -1,113 +1,167 @@
-import Image from 'next/image'
+'use client'
+import React, { useState } from 'react';
 
-export default function Home() {
+const page = () => {
+  const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
+  const handleTransfer = () => {
+    if (isValidEmail(email)) {
+      // Email is valid, redirect to the link
+      window.location.href = "https://app.loch.one/welcome";
+    } else {
+      // Email is not valid, show an error message
+      setErrorMessage("Please enter a valid email.");
+    }
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <div>
+      <div class="flex flex-col lg:flex-row h-screen">
+        <div class="w-full lg:w-1/2 h-fit lg:h-screen relative d1">
+          <div class="bg-black absolute inset-0 z-0"></div>
+
+          <div class="bgR py-3 lg:py-8 pl-3 lg:pl-11 relative z-10 h-full">
+            <div className='flex flex-col h-full justify-between'>
+              <div className='flex items-center justify-between w-full gap-4 '>
+                <div className='w-1/2 flex flex-col gap-2 '>
+                  <img src="/bell.svg" className='w-6 h-6' alt="bell icon" />
+                  <p className='text-sm md:text-lg lg:text-3xl font-bold tt1 text-white strokeT'>Get notified when a highly correlated whale makes a move</p>
+                  <p className='smT md:text-xs lg:text-sm text-gray-400'>Find out when a certain whale moves more than any preset amount on-chain or when a dormant whale you care about becomes active.</p>
+                </div>
+                <div class="w-1/2 flex items-center gap-3 overflow-x-scroll scrl px-4 lg:px-10 relative">
+
+                  <div class="c1 rounded-xl w-56 h-32 lg:h-40 p-4 flex flex-col gap-2 cursor-pointer">
+                    <span class="flex items-start justify-between">
+                      <img src="/bell2.svg" alt="bell2" className='w-4 lg:w-auto' />
+                      <span class="smT lg:sv">Save</span>
+                    </span>
+                    <p class="text-xs md:text-sm leading-4 lg:text-md font-medium w-40 lg:leading-4 select-none">We’ll be sending notifications to you here</p>
+                    <input type="text" placeholder="hello@gmail.com" class="border-2 bg-white w-full px-3 h-7 lg:h-10 rounded-md text-xs lg:text-sm text-black" disabled />
+                  </div>
+                  <div class="c2 rounded-xl w-56 h-32 lg:h-40 p-4 flex flex-col justify-between">
+                    <span class="flex items-start justify-between">
+                      <img src="/an.svg" alt="bell2" className='w-4 lg:w-auto' />
+                      <input type="checkbox" />
+                    </span>
+                    <span className='flex flex-col gap-2'>
+                    <p class="text-xs md:text-sm leading-4 lg:text-md font-medium w-40 lg:leading-4 select-none">Notify me when any wallets move more than</p>
+                    <select className="border-2 bg-white w-full px-3 h-7 lg:h-10 rounded-md text-xs lg:text-sm ">
+                      <option value="option1">Option 1</option>
+                      <option value="option2">Option 2</option>
+                    </select>
+                    </span>
+
+                  </div>
+                  <div class="c3 rounded-xl w-56 h-32 lg:h-40 p-4 flex flex-col justify-between">
+                    <span class="flex items-start justify-between">
+                      <img src="/an.svg" alt="bell2" className='w-4 lg:w-auto' />
+                      <input type="checkbox" />
+                    </span>
+                    <span className='flex '>
+                    <p class="text-xs md:text-sm leading-4 lg:text-md font-medium w-40 lg:leading-4 select-none">Notify me when any wallet dormant for 
+                    <span>
+                    <select className="border-2 bg-white rounded-md text-xs lg:text-sm ">
+                      <option value="option1">{`>30 days`}</option>
+                      <option value="option2">{`<30 days`}</option>
+                    </select>
+                    </span> 
+                     becomes active
+                     </p>
+                    
+                    </span>
+
+                  </div>
+                </div>
+
+              </div>
+              <div className='flex items-center justify-between gap-10 mt-2 lg:mt-10'>
+                <img src="/c.png" alt="image" className='w-1/2 lg:w-1/3' />
+                <div className='flex flex-col gap-2 pr-3 lg:pr-10'>
+                  <img src="/eye.svg" className='w-6 h-6 ml-auto' alt="bell icon" />
+                  <p className='text-sm leading-4 md:text-lg lg:text-3xl font-medium text-white text-right'>Watch what the <br /> whales are doing</p>
+                  <p className='smT md:xs lg:text-sm text-gray-400 text-right lg:w-64 lg:ml-auto' >All whales are not equal. Know exactly what the whales impacting YOUR portfolio are doing.</p>
+                </div>
+
+              </div>
+              <div className='flex flex-col items-center justify-between gap-5'>
+                <div className='pr-3 lg:pr-10 w-full text-right mt-3'>
+                  <p className='text-right text-white text-sm lg:text-xl font-medium border-b pb-2 w-full '>Testimonials</p>
+                </div>
+                <div className='flex items-end  w-full gap-1'>
+                  <img src="/logo.svg" alt="logo" />
+                  <div class="w-full overflow-x-auto px-10 scrl">
+                    <div class="flex space-x-4">
+
+                      {/* Testimonials 1 */}
+
+
+                      <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                          <div className='flex items-center gap-2'>
+                            <span className='font-semibold text-sm lg:text-md'>Jack F</span>
+                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                          </div>
+                          <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
+                            “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
+                          </span>
+                        </div>
+                      </div>
+                      <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                          <div className='flex items-center gap-2'>
+                            <span className='font-semibold text-sm lg:text-md'>Jack F</span>
+                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                          </div>
+                          <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
+                            “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
+                          </span>
+                        </div>
+                      </div>
+                      <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                          <div className='flex items-center gap-2'>
+                            <span className='font-semibold text-sm lg:text-md'>Jack F</span>
+                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                          </div>
+                          <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
+                            “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 h-screen bg-white flex items-center justify-center d2 z-20">
+          <div class="w-2/3 lg:w-1/2 space-y-3 h-fit">
+            <p className='leading-5 text-lg md:text-xl lg:text-3xl text-left font-medium text-gray-400'>Sign up for <br /> exclusive access</p>
+            <input
+              type="text"
+              placeholder="Your email address"
+              class="w-full h-9 lg:h-12 rounded-md px-4 border-2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-          </a>
+            <button class="text-white bg-black w-full h-9 lg:h-12 rounded-md" onClick={handleTransfer}>
+              Get Started
+            </button>
+            {errorMessage && <p className='text-md font-semibold text-center text-red-500 mt-2'>{errorMessage}</p>}
+            <p className='text-xs lg:text-md font-semibold text-center mt-8'>You’ll receive an email with an invite link to join.</p>
+          </div>
         </div>
       </div>
+    </div >
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   )
 }
+
+export default page

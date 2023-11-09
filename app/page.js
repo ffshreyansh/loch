@@ -12,10 +12,8 @@ const page = () => {
 
   const handleTransfer = () => {
     if (isValidEmail(email)) {
-      // Email is valid, redirect to the link
       window.location.href = "https://app.loch.one/welcome";
     } else {
-      // Email is not valid, show an error message
       setErrorMessage("Please enter a valid email.");
     }
   };

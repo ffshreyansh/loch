@@ -33,7 +33,7 @@ const page = () => {
                   <p className='text-sm md:text-lg lg:text-3xl font-bold tt1 text-white strokeT'>Get notified when a highly correlated whale makes a move</p>
                   <p className='smT md:text-xs lg:text-sm text-gray-400'>Find out when a certain whale moves more than any preset amount on-chain or when a dormant whale you care about becomes active.</p>
                 </div>
-                <div class="w-1/2 flex items-center gap-3 overflow-x-scroll scrl px-4 lg:px-10 relative">
+                <div class="w-1/2 flex items-center gap-3 overflow-x-scroll rounded-s-xl scrl px-4 lg:px-10 relative">
 
                   <div class="c1 rounded-xl w-56 h-32 lg:h-40 p-4 flex flex-col gap-2 cursor-pointer">
                     <span class="flex items-start justify-between">
@@ -79,7 +79,7 @@ const page = () => {
                 </div>
 
               </div>
-              <div className='flex items-center justify-between gap-10 mt-2 lg:mt-10'>
+              <div className='flex items-center justify-between gap-4 lg:gap-10 mt-2 lg:mt-10'>
                 <img src="/c.png" alt="image" className='w-1/2 lg:w-1/3' />
                 <div className='flex flex-col gap-2 pr-3 lg:pr-10'>
                   <img src="/eye.svg" className='w-6 h-6 ml-auto' alt="bell icon" />
@@ -89,19 +89,19 @@ const page = () => {
 
               </div>
               <div className='flex flex-col items-center justify-between gap-5'>
-                <div className='pr-3 lg:pr-10 w-full text-right mt-3'>
+                <div className='pr-3 lg:pr-10 w-full text-right mt-0 lg:mt-3'>
                   <p className='text-right text-white text-sm lg:text-xl font-medium border-b pb-2 w-full '>Testimonials</p>
                 </div>
                 <div className='flex items-end  w-full gap-1'>
                   <img src="/logo.svg" alt="logo" />
-                  <div class="w-full overflow-x-auto px-10 scrl">
+                  <div class="w-full overflow-x-scroll px-10 scrl rounded-s-xl">
                     <div class="flex space-x-4">
 
                       {/* Testimonials 1 */}
 
 
                       <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
-                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
                             <span className='font-semibold text-sm lg:text-md'>Jack F</span>
                             <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
@@ -112,24 +112,24 @@ const page = () => {
                         </div>
                       </div>
                       <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
-                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
-                            <span className='font-semibold text-sm lg:text-md'>Jack F</span>
-                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                            <span className='font-semibold text-sm lg:text-md'>Yash P</span>
+                            <span className='text-xs lg:text-sm text-gray-400'>Research, 3poch Crypto Hedge Fund</span>
                           </div>
                           <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
-                            “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
+                          “I use Loch everyday now. I don't think I could analyze trends markets without it. I'm addicted!”
                           </span>
                         </div>
                       </div>
-                      <div class="max-w-xs h-24 lg:h-32 flex-shrink-0">
-                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-lg p-4'>
+                      <div class="max-w-lg h-24 lg:h-32 flex-shrink-0">
+                        <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
-                            <span className='font-semibold text-sm lg:text-md'>Jack F</span>
-                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                            <span className='font-semibold text-sm lg:text-md'>Shiv S</span>
+                            <span className='text-xs lg:text-sm text-gray-400'>Co-Founder Magik Labs</span>
                           </div>
                           <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
-                            “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
+                          “Managing my own portfolio is helpful and well designed. What’s really interesting is watching the whales though. No one else has made whale tracking so simple.”
                           </span>
                         </div>
                       </div>
@@ -143,7 +143,7 @@ const page = () => {
         </div>
         <div class="w-full lg:w-1/2 h-screen bg-white flex items-center justify-center d2 z-20">
           <div class="w-2/3 lg:w-1/2 space-y-3 h-fit">
-            <p className='leading-5 text-lg md:text-xl lg:text-3xl text-left font-medium text-gray-400'>Sign up for <br /> exclusive access</p>
+            <p className='leading-5 lg:mb-3 text-lg md:text-xl lg:text-4xl text-left font-medium text-gray-400'>Sign up for <br /> exclusive access</p>
             <input
               type="text"
               placeholder="Your email address"

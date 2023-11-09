@@ -83,8 +83,8 @@ const page = () => {
                 <img src="/c.png" alt="image" className='w-1/2 lg:w-1/3' />
                 <div className='flex flex-col gap-2 pr-3 lg:pr-10'>
                   <img src="/eye.svg" className='w-6 h-6 ml-auto' alt="bell icon" />
-                  <p className='text-sm leading-4 md:text-lg lg:text-3xl font-medium text-white text-right'>Watch what the <br /> whales are doing</p>
-                  <p className='smT md:xs lg:text-sm text-gray-400 text-right lg:w-64 lg:ml-auto' >All whales are not equal. Know exactly what the whales impacting YOUR portfolio are doing.</p>
+                  <p className='text-sm leading-4 md:text-3xl lg:text-3xl font-medium text-white text-right'>Watch what the <br /> whales are doing</p>
+                  <p className='smT md:text-sm md:w-2/3 md:ml-auto lg:text-sm text-gray-400 text-right lg:w-64 lg:ml-auto' >All whales are not equal. Know exactly what the whales impacting YOUR portfolio are doing.</p>
                 </div>
 
               </div>
@@ -104,7 +104,7 @@ const page = () => {
                         <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
                             <span className='font-semibold text-sm lg:text-md'>Jack F</span>
-                            <span className='text-xs lg:text-sm text-gray-400'>Ex Blackrock PM</span>
+                            <span className='text-xs text-gray-400'>Ex Blackrock PM</span>
                           </div>
                           <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
                             “Love how Loch integrates portfolio analytics and whale watching into one unified app.”
@@ -115,7 +115,7 @@ const page = () => {
                         <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
                             <span className='font-semibold text-sm lg:text-md'>Yash P</span>
-                            <span className='text-xs lg:text-sm text-gray-400'>Research, 3poch Crypto Hedge Fund</span>
+                            <span className='text-xs text-gray-400'>Research, 3poch Crypto Hedge Fund</span>
                           </div>
                           <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
                           “I use Loch everyday now. I don't think I could analyze trends markets without it. I'm addicted!”
@@ -126,9 +126,9 @@ const page = () => {
                         <div className='flex flex-col items-start gap-2 bg-white h-24 lg:h-32 rounded-xl p-4'>
                           <div className='flex items-center gap-2'>
                             <span className='font-semibold text-sm lg:text-md'>Shiv S</span>
-                            <span className='text-xs lg:text-sm text-gray-400'>Co-Founder Magik Labs</span>
+                            <span className='text-xs text-gray-400'>Co-Founder Magik Labs</span>
                           </div>
-                          <span className='text-xs md:text-sm lg:text-sm font-medium break-words'>
+                          <span className='text-xs lg:text-sm font-medium break-words'>
                           “Managing my own portfolio is helpful and well designed. What’s really interesting is watching the whales though. No one else has made whale tracking so simple.”
                           </span>
                         </div>
